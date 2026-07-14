@@ -1,0 +1,20 @@
+# Raw financial data — NEVER committed
+data/
+
+# Belt and suspenders: statement/export formats anywhere in the repo
+*.pdf
+# ...except built report snapshots (rounded figures only, per privacy policy)
+!reports/*.pdf
+*.csv
+*.xlsx
+*.xls
+*.qfx
+*.ofx
+*.qbo
+
+# Setup leftovers
+NEXT_STEPS.md
+
+# OS noise
+.DS_Store
+Thumbs.db
