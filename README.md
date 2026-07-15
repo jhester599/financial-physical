@@ -1,8 +1,21 @@
 # Financial Physical 🩺💰
 
-An annual household financial review — a **"financial physical"** — that you run with Claude, on your own computer, using your own documents. Once a year you gather your statements, sit down with Claude for an afternoon, and walk away with a written report: where you stand, what changed since last year, and a prioritized list of actions.
+An annual household financial review — a **"financial physical"** — that you run with an AI assistant, using your own documents. Once a year you gather your statements, sit down with Claude for an afternoon, and walk away with a written report: where you stand, what changed since last year, and a prioritized list of actions.
 
 This is a **template**. It doesn't come with a methodology baked in — your first session is a guided interview where Claude learns your situation (your income sources, accounts, family, goals) and writes a personalized methodology just for you. A renter with a pension gets a different checkup than a homeowner with stock compensation. After setup, the same annual routine works for both.
+
+## Three ways to run it — pick your track
+
+| | ⚡ Quick Physical | 💬 Chat track | 🖥️ Claude Code track |
+|---|---|---|---|
+| **What it is** | One-prompt mini-review in a single sitting | The full system, run in regular Claude chats using a Claude Project | The full system, run by Claude Code in a folder on your computer |
+| **You need** | Any capable AI chat (Claude, ChatGPT, Gemini…) | Claude Pro (claude.ai — no installs) | Claude Pro + Claude Code installed |
+| **Personalization** | Generic — you type in your numbers | Personalized methodology via the setup interview | Personalized methodology via the setup interview |
+| **Depth** | Snapshot + simple projection + top actions | Full report; coarser projections, summary-level spending | Full report; transaction-level spending audit, deepest analysis |
+| **Data handling** | Type summary numbers into a chat | Type numbers and/or upload redacted documents to your Project | Raw documents stay in a local folder, read in place |
+| **Start here** | [`chat/QUICK_PHYSICAL_PROMPT.md`](chat/QUICK_PHYSICAL_PROMPT.md) | [`chat/CHAT_GETTING_STARTED.md`](chat/CHAT_GETTING_STARTED.md) | [`GETTING_STARTED.md`](GETTING_STARTED.md) |
+
+**Not sure?** Do the Quick Physical this weekend — it takes an hour and tells you whether the full version is worth your time. You can graduate tracks any time; they share the same methodology files. And you don't need to run any Research step your first year: a **pre-built 2026 reference** ships in [`research/STANDING_REFERENCE_2026_SEED.md`](research/STANDING_REFERENCE_2026_SEED.md).
 
 > **⚠️ Important disclaimer — read this first**
 >
@@ -18,6 +31,8 @@ This is a **template**. It doesn't come with a methodology baked in — your fir
 
 ## How it stays private
 
+*(This section describes the Claude Code track — the most private option. The chat track's model is different and is explained honestly in [`chat/CHAT_GETTING_STARTED.md`](chat/CHAT_GETTING_STARTED.md): uploads are stored in your conversation/Project until you delete them.)*
+
 **Your raw financial data never leaves your machine.** The system is built around one rule:
 
 - Everything sensitive — statements, transaction exports, notes with real numbers — lives in the `data/` folder, which is **excluded from git** and never uploaded anywhere.
@@ -26,7 +41,7 @@ This is a **template**. It doesn't come with a methodology baked in — your fir
 - During a session, Claude reads your files locally and the content it analyzes is processed by Anthropic's API in the moment — same as anything you'd paste into a Claude chat. Nothing is stored in this repository or on GitHub.
 - **Always run reviews on your own computer** (Claude Code in this folder, or Claude Desktop pointed at it) — never upload `data/` files to a web/cloud session.
 
-## What you need
+## What you need (Claude Code track)
 
 1. **A Claude subscription** with Claude Code and Research included (Pro works; Max if you use Claude heavily). ~$20+/month.
 2. **Claude Code** installed ([quickstart](https://code.claude.com/docs/en/quickstart)) or the **Claude Desktop app**.
@@ -35,7 +50,7 @@ This is a **template**. It doesn't come with a methodology baked in — your fir
 
 **GitHub is optional.** If you don't use GitHub, just download this template as a folder and everything works — see [GETTING_STARTED.md](GETTING_STARTED.md).
 
-## Quick start
+## Quick start (Claude Code track)
 
 **If you use GitHub:** click **"Use this template"** at the top of this page → create a **private** copy under your account → clone it to your computer.
 
@@ -52,7 +67,7 @@ Full walkthrough with more hand-holding: **[GETTING_STARTED.md](GETTING_STARTED.
 
 ## The annual routine (after setup)
 
-1. **Refresh the facts** *(required first step each year)*: run `RESEARCH_PROMPT.md` in a Claude chat with Research enabled; save the output as `research/STANDING_REFERENCE_[YEAR].md`. This gives the review current tax law, contribution limits, and research — the review refuses to run on a stale edition.
+1. **Refresh the facts** *(required first step each year)*: run `RESEARCH_PROMPT.md` in a Claude chat with Research enabled; save the output as `research/STANDING_REFERENCE_[YEAR].md`. This gives the review current tax law, contribution limits, and research — the review refuses to run on a stale edition. *(For 2026 reviews you can skip this: the bundled seed edition in `research/` satisfies it, minus your state's specifics.)*
 2. **Gather documents** per your `DATA_CHECKLIST.md`, redact account numbers, place in `data/`.
 3. **Update your notes** file in `data/` (template in the checklist).
 4. **Run the review**: open Claude Code in this folder, paste `ANNUAL_REVIEW_PROMPT.md`. Claude inventories your documents, walks the annual-inputs interview with you, runs the analysis per your `PROCESS.md`, and drafts the report interactively.
@@ -72,10 +87,11 @@ financial-physical/
 ├── DATA_CHECKLIST.md            # (created by setup) YOUR document list & annual inputs
 ├── RESEARCH_PROMPT.md           # (created by setup) YOUR annual facts-refresh prompt
 ├── PEER_REVIEW_PROMPT.md        # (created by setup) YOUR independent-review prompt
+├── chat/                        # 💬 the no-installs tracks: Quick Physical + chat edition
 ├── templates/                   # skeletons + module library the setup interview uses
 ├── examples/                    # a FICTIONAL example report excerpt (not real numbers)
 ├── scripts/build_report.py      # optional: report markdown → HTML → PDF
-├── research/                    # committed: one standing reference per year
+├── research/                    # standing references (2026 seed edition included)
 ├── reports/                     # committed: one report per year (rounded figures only)
 └── data/                        # ★ NEVER COMMITTED — your raw statements & notes
 ```

@@ -1,6 +1,8 @@
-# Getting Started — Step by Step
+# Getting Started — Step by Step (Claude Code track)
 
-This walkthrough assumes nothing. If you've used GitHub and Claude Code before, the [README quick start](README.md#quick-start) is all you need.
+This walkthrough assumes nothing. If you've used GitHub and Claude Code before, the [README quick start](README.md#quick-start-claude-code-track) is all you need.
+
+> **Don't want to install anything?** There are two lighter options: a one-hour **Quick Physical** that works in any AI chat (`chat/QUICK_PHYSICAL_PROMPT.md`), and a full **chat track** that runs the whole system in claude.ai with no installs (`chat/CHAT_GETTING_STARTED.md`). The README's "Three ways to run it" table compares them. This guide covers the deepest option: Claude Code working in a folder on your computer.
 
 ## Step 1 — Get Claude
 
