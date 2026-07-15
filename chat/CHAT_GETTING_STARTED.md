@@ -13,9 +13,13 @@ This track runs the whole system in **regular Claude chats** (claude.ai or the m
 ## One-time setup (~1–2 hours)
 
 1. **Create a Project** at claude.ai → Projects → "Financial Physical". Projects give every conversation inside them access to shared "project knowledge" files — that's where your methodology will live.
-2. **Add the starter files to project knowledge:** everything in the template's `templates/` folder (the four skeletons + the `modules/` files), plus `research/STANDING_REFERENCE_2026_SEED.md`.
-3. **Run the setup interview:** start a new conversation in the Project, and paste everything below the line in `chat/CHAT_SETUP_PROMPT.md`. Claude interviews you and then produces your four personalized documents (PROCESS.md, DATA_CHECKLIST.md, RESEARCH_PROMPT.md, PEER_REVIEW_PROMPT.md).
-4. **Save the outputs twice:** download each generated document to a folder on your computer (your permanent archive), **and** add each to project knowledge (so future conversations can see them). You can remove the `templates/` skeleton files from project knowledge afterwards — they've done their job.
+2. **Set the Project's custom instructions** (Project page → "Set custom instructions") — paste this; it makes every conversation in the Project behave, even quick one-off questions:
+
+   > This project is our household's annual financial review system. Always: treat PROCESS.md in project knowledge as the methodology contract; take tax figures and limits only from the standing reference in project knowledge (flag anything it doesn't cover as "verify" — never quote limits from memory); use plain language and define jargon; use rounded figures and never account numbers in anything meant to be saved; if you spot an account number in an upload, tell me immediately. This is educational decision support, not financial, tax, or legal advice.
+
+3. **Add the starter files to project knowledge:** everything in the template's `templates/` folder (the four skeletons + the `modules/` files), plus `research/STANDING_REFERENCE_2026_SEED.md`.
+4. **Run the setup interview:** start a new conversation in the Project, and paste everything below the line in `chat/CHAT_SETUP_PROMPT.md`. Claude interviews you and then produces your four personalized documents (PROCESS.md, DATA_CHECKLIST.md, RESEARCH_PROMPT.md, PEER_REVIEW_PROMPT.md).
+5. **Save the outputs twice:** download each generated document to a folder on your computer (your permanent archive), **and** add each to project knowledge (so future conversations can see them). You can remove the `templates/` skeleton files from project knowledge afterwards — they've done their job.
 
 ## The annual review (chat edition)
 

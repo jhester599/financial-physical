@@ -15,7 +15,7 @@ This is a **template**. It doesn't come with a methodology baked in — your fir
 | **Data handling** | Type summary numbers into a chat | Type numbers and/or upload redacted documents to your Project | Raw documents stay in a local folder, read in place |
 | **Start here** | [`chat/QUICK_PHYSICAL_PROMPT.md`](chat/QUICK_PHYSICAL_PROMPT.md) | [`chat/CHAT_GETTING_STARTED.md`](chat/CHAT_GETTING_STARTED.md) | [`GETTING_STARTED.md`](GETTING_STARTED.md) |
 
-**Not sure?** Do the Quick Physical this weekend — it takes an hour and tells you whether the full version is worth your time. You can graduate tracks any time; they share the same methodology files. And you don't need to run any Research step your first year: a **pre-built 2026 reference** ships in [`research/STANDING_REFERENCE_2026_SEED.md`](research/STANDING_REFERENCE_2026_SEED.md).
+**Not sure?** Do the Quick Physical this weekend — it takes an hour (10 minutes of it with the [fill-in worksheet](chat/QUICK_PHYSICAL_WORKSHEET.md)), gives you a vitals scorecard, and tells you whether the full version is worth your time — [see a fictional example of its output](examples/EXAMPLE-quick-physical-output.md). You can graduate tracks any time; they share the same methodology files. And you don't need to run any Research step your first year: a **pre-built 2026 reference** ships in [`research/STANDING_REFERENCE_2026_SEED.md`](research/STANDING_REFERENCE_2026_SEED.md).
 
 > **⚠️ Important disclaimer — read this first**
 >
@@ -99,6 +99,10 @@ financial-physical/
 ## Model guidance
 
 Use the strongest reasoning model available for the annual review itself — it's a once-a-year task with heavy multi-document analysis, worth the best model you have access to (switch with `/model` in Claude Code). Lighter/faster models are fine for checklist edits and small updates.
+
+## Updates & questions
+
+The template improves over time (see [CHANGELOG.md](CHANGELOG.md)) and the bundled seed reference is refreshed annually. Updates never touch your generated files — to pick them up, re-download the prompts/seed you use, or `git pull` if you cloned. Questions, confusion, or "the interview didn't handle my situation" reports → open a GitHub Issue on this repo; that feedback is how the template gets better.
 
 ## Origin
 
